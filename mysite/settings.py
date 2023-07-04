@@ -79,7 +79,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'URL': os.getenv('DATABASE_URL'),
-        'NAME': os.getenv('railway'),
+        'NAME': os.getenv('Post'),
         'USER': os.getenv('postgres'),
         'PASSWORD': os.getenv('2vLHBrXvJtOlSvxHQ3ee'),
         'HOST': os.getenv('containers-us-west-57.railway.app'),
