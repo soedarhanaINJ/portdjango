@@ -26,7 +26,7 @@ SECRET_KEY = '0x!b#(1*cd73w$&azzc6p+essg7v=g80ls#z&xcx*mpemx&@9$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', 'www.soedev.my.id', '*']
+ALLOWED_HOSTS = ['.vercel.app', 'www.soedev.my.id']
 
 
 # Application definition
@@ -78,11 +78,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'dbdjango',
-        'PASSWORD': '1234Nepi8',
-        'HOST': 'db-djangoproject.crcyk79sx4hb.ap-southeast-2.rds.amazonaws.com',
-        'PORT': '5432',
+        'URL': 'DATABASE_URL',
+        'NAME': 'Post',
+        'USER': 'postgres',
+        'PASSWORD': '2vLHBrXvJtOlSvxHQ3ee',
+        'HOST': 'containers-us-west-57.railway.app',
+        'PORT': 6502,
     }
 }
 
