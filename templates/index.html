@@ -22,14 +22,14 @@
       
               <!-- Blog Entries Column -->
               <div class="col-md-8 mt-3 left">
-                    {% for x in post %}
+                    {% for x in object_list %}
                         <div class="card mb-4" >
                             <div class="card-body">
                                 <h2 class="card-title">{{ x.title }}</h2>
                                 <p class="card-text text-muted h6">{{ x.author }} | {{ x.created_on}} </p>
 
-                                <p class="card-text">{{x.content|slice:":200" }}</p>
-                                <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                                <p class="card-text">{{ x.content|slice:":200" }}</p>
+                                <a href="{% url 'post_detail' x.slug  %}" class="btn btn-primary">Read More &rarr;</a>
                             </div>
                         </div>
                     {% endfor %}

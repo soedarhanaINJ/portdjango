@@ -1,15 +1,15 @@
 from django.http import HttpResponse
 from django.views import generic
 from django.template import loader
-from .models import Post
+from .models import posting
 
 
 class PostList(generic.ListView):
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    queryset = posting.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
 
 class PostDetail(generic.DetailView):
-    model = Post
+    model = posting
     template_name = 'post_detail.html'
 
 def about(request):

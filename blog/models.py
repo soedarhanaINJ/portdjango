@@ -7,7 +7,7 @@ STATUS = (
     (1,"Publish")
 )
  
-class Post(models.Model):
+class posting(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -22,4 +22,3 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-
