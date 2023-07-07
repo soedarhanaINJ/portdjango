@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,10 +29,14 @@ TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
 SECRET_KEY = '0x!b#(1*cd73w$&azzc6p+essg7v=g80ls#z&xcx*mpemx&@9$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.vercel.app', 'www.soedev.my.id']
 
+
+SECURE_SSL_REDIRECT=True
+SESSION_COOKIE_SECURE=True
+CSRF_COOKIE_SECURE=True
 
 # Application definition
 
@@ -75,15 +84,26 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'djongo',
+#        'NAME': 'Post',
+#        "CLIENT": {
+#            'host': 'mongodb+srv://isoedarhana:adminkoplak@cluster0.zpc6te8.mongodb.net/',
+#                'username': 'isoedarhana',
+#                'password': 'adminkoplak',
+#        }
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'Post',
-        "CLIENT": {
-            'host': 'mongodb+srv://isoedarhana:adminkoplak@cluster0.zpc6te8.mongodb.net/',
-                'username': 'isoedarhana',
-                'password': 'adminkoplak',
-        }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get("Post"),
+        'USER': os.environ.get("postgres"),
+        'PASSWORD': os.environ.get("2vLHBrXvJtOlSvxHQ3ee"),
+        'HOST': os.environ.get("containers-us-west-57.railway.app"),
+        'PORT': os.environ.get("6502"),
     }
 }
 
@@ -125,3 +145,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
