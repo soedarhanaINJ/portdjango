@@ -27,7 +27,7 @@ SECRET_KEY = '0x!b#(1*cd73w$&azzc6p+essg7v=g80ls#z&xcx*mpemx&@9$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', 'www.soedev.my.id', '*']
+ALLOWED_HOSTS = ['.vercel.app', 'www.soedev.my.id']
 
 
 # Application definition
@@ -77,17 +77,15 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'Post',
-        "CLIENT": {
-            'host': 'mongodb+srv://isoedarhana:adminkoplak@cluster0.zpc6te8.mongodb.net/',
-                'name': 'posting',
-                'authMechanism': 'SCRAM-SHA-1',
-                'username': 'isoedarhana',
-                'password': 'adminkoplak',
-        }
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'DATABASE_URL': 'postgresql://postgres:MVG69ACSDbMoJRnTLokt@containers-us-west-55.railway.app:6349/railway',
+       'NAME': 'post',
+       'USER': 'postgres',
+       'PASSWORD': 'MVG69ACSDbMoJRnTLokt',
+       'HOST': 'containers-us-west-55.railway.app',
+       'PORT': '6349',
+   }
 }
 
 
@@ -129,5 +127,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'staticfiles_build'),
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
