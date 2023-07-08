@@ -29,14 +29,10 @@ TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
 SECRET_KEY = '0x!b#(1*cd73w$&azzc6p+essg7v=g80ls#z&xcx*mpemx&@9$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', 'www.soedev.my.id']
+ALLOWED_HOSTS = ['.vercel.app', 'www.soedev.my.id', '*']
 
-
-SECURE_SSL_REDIRECT=True
-SESSION_COOKIE_SECURE=True
-CSRF_COOKIE_SECURE=True
 
 # Application definition
 
@@ -84,28 +80,20 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'djongo',
-#        'NAME': 'Post',
-#        "CLIENT": {
-#            'host': 'mongodb+srv://isoedarhana:adminkoplak@cluster0.zpc6te8.mongodb.net/',
-#                'username': 'isoedarhana',
-#                'password': 'adminkoplak',
-#        }
-#    }
-#}
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': "post",
-        'USER': "postgres",
-        'PASSWORD': "adminkoplak",
-        'HOST': "post.crcyk79sx4hb.ap-southeast-2.rds.amazonaws.com",
-        'PORT': "5432",
+        'ENGINE': 'djongo',
+        'NAME': 'Post',
+        "CLIENT": {
+            'host': 'mongodb+srv://isoedarhana:adminkoplak@cluster0.zpc6te8.mongodb.net/',
+                'name': 'posting',
+                'authMechanism': 'SCRAM-SHA-1',
+                'username': 'isoedarhana',
+                'password': 'adminkoplak',
+        }
     }
 }
+
 
 
 # Password validation
