@@ -27,7 +27,7 @@ SECRET_KEY = '0x!b#(1*cd73w$&azzc6p+essg7v=g80ls#z&xcx*mpemx&@9$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', 'www.soedev.my.id', '*']
+ALLOWED_HOSTS = ['.vercel.app', 'www.soedev.my.id']
 
 
 # Application definition
@@ -80,12 +80,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'DATABASE_URL': 'postgresql://postgres:MVG69ACSDbMoJRnTLokt@containers-us-west-55.railway.app:6349/railway',
-       'NAME': 'post',
-       'USER': 'postgres',
-       'PASSWORD': 'MVG69ACSDbMoJRnTLokt',
-       'HOST': 'containers-us-west-55.railway.app',
-       'PORT': '6349',
+       'URL': os.getenv('postgresql://postgres:MVG69ACSDbMoJRnTLokt@containers-us-west-55.railway.app:6349/railway'),
+       'NAME': os.getenv('post'),
+       'USER': os.getenv('postgres'),
+       'PASSWORD': os.getenv('MVG69ACSDbMoJRnTLokt'),
+       'HOST': os.getenv('containers-us-west-55.railway.app'),
+       'PORT': os.getenv('6349'),
    }
 }
 
