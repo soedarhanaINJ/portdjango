@@ -77,18 +77,17 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+
 DATABASES = {
    'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'URL': os.getenv('postgresql://postgres:MVG69ACSDbMoJRnTLokt@containers-us-west-55.railway.app:6349/railway'),
-       'NAME': os.getenv('post'),
-       'USER': os.getenv('postgres'),
-       'PASSWORD': os.getenv('MVG69ACSDbMoJRnTLokt'),
-       'HOST': os.getenv('containers-us-west-55.railway.app'),
-       'PORT': os.getenv('6349'),
+       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+       'NAME': 'railway',
+       'USER': 'postgres',
+       'PASSWORD': 'MVG69ACSDbMoJRnTLokt',
+       'HOST': 'containers-us-west-55.railway.app',
+       'PORT': '6349',
    }
 }
-
 
 
 # Password validation

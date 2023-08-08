@@ -1,5 +1,6 @@
 # DjangoProject
 A blog application made on Django
 
+Using railways to provided the database postgreSQL
 
-To see the results visit https://soedev.my.id
+and pusing and live on this link site: 
