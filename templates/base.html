@@ -1,10 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <title>Soedarhana</title>
 
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+      href="{% static 'css/gfontapi.css' %}"
       rel="stylesheet">
     <meta name="google" content="notranslate" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,30 +20,6 @@
   </head>
 
   <body>
-    <style>
-      body {
-        font-family: "Roboto", sans-serif;
-        font-size: 17px;
-        background-color: #fdfdfd;
-      }
-
-    .shadow{
-           box-shadow: 0 4px 2px -2px rgba(0,0,0,0.1);
-       }
-      .btn-danger {
-        color: #fff;
-        background-color: #f00000;
-        border-color: #dc281e;
-      }
-     
-     .masthead {
-              background:#3398E1;
-              height: auto;
-              padding-bottom: 15px;
-              box-shadow: 0 16px 48px #E3E7EB;
-              padding-top: 10px;
-    }
-    </style>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="mainNav">
@@ -92,7 +70,7 @@
     
 
             {% block content %} 
-          <!-- Content Goes here -->
+            <!-- Content Goes here -->
             {% endblock content %}
     
     <!-- Footer -->
@@ -100,5 +78,10 @@
               <p class="m-0 text-dark text-center ">2023 &copy; Soedarhana</p>
     </footer>
     
+    <!-- adding jquery from bootstrap5 -->
+    <script src="{% static 'jquery/slim.min.js' %}" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="{% static 'jquery/popper.min.js' %}" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="{% static 'jquery/bootstrap.min.js' %}" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
   </body>
 </html>
