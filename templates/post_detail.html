@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+
+<link rel="stylesheet" href="{% static 'css/post_detail.css' %}">
 
 <div class="container">
   <div class="row">
@@ -14,6 +17,7 @@
             <button type="button" class="btn btn-primary">Back</button>
           </a>
       </div>
+      
     </div>
       {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
   </div>
