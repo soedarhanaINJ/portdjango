@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load blog_md %}
 
 {% block content %}
 
@@ -11,7 +12,7 @@
       <div class="card-body">
           <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
           <p class=" text-muted">{{ object.author }} | {{ object.created_on }}</p>
-          <p class="card-text ">{{ object.content | safe }}</p>
+          <p class="card-text ">{{ object.content | convert | safe }}</p>
 
           <a href="{% url 'home' %}">
             <button type="button" class="btn btn-primary">Back</button>
