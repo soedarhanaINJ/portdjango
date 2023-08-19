@@ -1,14 +1,11 @@
+{% load static %}
+
 {% block sidebar %}
 
-<style>
-        .card{
-            box-shadow: 0 16px 48px #E3E7EB;
-        }
-       
-</style>
+<link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
 
 <!-- Sidebar Widgets Column -->
-<div class="col-md-4 float-right ">
+<div class="col-md-4 float-right">
 <div class="card my-4">
         <h5 class="card-header">Project</h5>
     <div class="card-body">
