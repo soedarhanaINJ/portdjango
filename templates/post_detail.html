@@ -10,6 +10,7 @@
   <div class="row">
     <div class="col-md-8 card mb-4  mt-3 left  top">
       <div class="card-body">
+          <p class="card-text">{{ object.author }} | {{ object.created_on }}</p>
           <p class="card-text">{{ object.content | convert | safe }}</p>
 
           <a href="{% url 'home' %}">
