@@ -1,34 +1,31 @@
-{% extends "base.html" %}
+{% extends "core/base.html" %}
 {% load static %}
 {% load blog_md %}
       
 {% block content %}
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
-        
-    <div class="container">
-        <div class="row">
-
-              <!-- Blog Entries Column -->
-              <div class="col-md-8 mt-3 left">
-                    {% for x in object_list %}
-                        <div class="card mb-4" >
-                            <div class="card-body">
-                                <h2 class="card-title">{{ x.title }}</h2>
-                                <p class="card-text text-muted h6">{{ x.author }} | {{ x.created_on}} </p>
-
-                                <!--
-                                    <p class="card-text">{{ x.content | convert | safe | slice:":155" }}</p>
-                                -->
-                                <a href="{% url 'post_detail' x.slug  %}" class="btn btn-primary">Read More &rarr;</a>
-                            </div>
-                        </div>
-                    {% endfor %}
-              </div>
-
-                {% block sidebar %}
-                {% include 'sidebar.html' %}
-                {% endblock sidebar %}
-
+    {% for x in object_list %}
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a href="{% url 'post_detail' x.slug  %}">
+                            <h2 class="post-title">{{ x.title }}</h2>
+                            <h3 class="post-subtitle">{{x.slug}}</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="{% url 'about' %}">{{ x.author }} </a>
+                            on {{ x.created_on}}
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Pager if you want limit post
+                        <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                    -->
+                </div>
+            </div>
         </div>
-    </div>
+    {% endfor %}
 {%endblock%}
