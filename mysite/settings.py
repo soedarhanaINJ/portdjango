@@ -130,3 +130,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+
+# Mailtraps for get the mail massage
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'a5358ee35183d0'
+EMAIL_HOST_PASSWORD = '8d980a6a054596'
+EMAIL_PORT = '2525'

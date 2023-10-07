@@ -1,17 +1,60 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block header %}
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="{% url 'home' %}">Soedarhana</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'home' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'about' %}">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="masthead" style="background-image: url('static/media/image/about-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>About Me</h1>
+                        <span class="subheading">Fullstack Web Developer.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
 
 {% block content %}
+    <main class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <h3 class="judul">Soedarhana</h3>
 
-<link rel="stylesheet" href="{% static 'css/about.css' %}"/>
-    <div class="container">
-        <h3 class="judul">Soedarhana</h3>
+                    <p style="text-align: justify;">
+                        I am a passionate and driven full-stack web developer with a specialization in Python. 
+                        My journey in the realm of technology has led me to master both the front-end and back-end aspects of web development, 
+                        ensuring that I can transform complex ideas into functional and user-friendly web applications.
+                        <br/><br/>
+                        On the front-end, I pride myself on crafting intuitive and responsive user interfaces that prioritize user experience. 
+                        <br/><br/>
+                        When it comes to back-end development, Python is my forte. Whether it's building robust APIs or integrating complex databases, I utilize Python's vast libraries and frameworks, to create scalable and efficient solutions. 
+                        <br/><br/>
+                        As a full-stack web developer specializing in Python, I bring a unique blend of technical expertise and creativity to the table, ensuring that every project I undertake not only meets but exceeds expectations.
+                        <br/>
+                    </p>
 
-        <p>
-            Hey. I'm a Python Developer at RWID.id Company.
-            I enjoy working with Python and solve problem back-end experiences.
-            You having trouble with your syntax in pyhton language? describe to me I will solve your problem.
-        </p>
-    </div>
-{% endblock content %}
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
