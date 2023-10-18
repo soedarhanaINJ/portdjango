@@ -27,7 +27,7 @@ SECRET_KEY = '0x!b#(1*cd73w$&azzc6p+essg7v=g80ls#z&xcx*mpemx&@9$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', 'www.soedarhana.id']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -79,14 +79,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       'NAME': 'railway',
-       'USER': 'postgres',
-       'PASSWORD': 'MVG69ACSDbMoJRnTLokt',
-       'HOST': 'containers-us-west-55.railway.app',
-       'PORT': '6349',
-   }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',  # Menggunakan SQLite sebagai contoh
+        'NAME': BASE_DIR / 'db.sqlite3',         # Nama file database
+        'USER': '',                              # Username (kosongkan jika tidak diperlukan)
+        'PASSWORD': '',                          # Password (kosongkan jika tidak diperlukan)
+        'HOST': '',                              # Host database (kosongkan jika menggunakan database lokal)
+        'PORT': '',                              # Port database (kosongkan jika menggunakan port default)
+    }
 }
 
 
@@ -130,10 +130,3 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-
-
-# Mailtraps for get the mail massage
-EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_HOST_USER = 'a5358ee35183d0'
-EMAIL_HOST_PASSWORD = '8d980a6a054596'
-EMAIL_PORT = '2525'
